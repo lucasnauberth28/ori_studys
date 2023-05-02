@@ -3,10 +3,10 @@
    ========================================================================== */
 
 /**
- * Remove anchor tex-decoration
+ * Remove anchor text-decoration
  */ 
 
- a {
+a {
 	text-decoration: none;
 }
 
