@@ -68,3 +68,28 @@ function scrollSuave(){
 }
 
 scrollSuave();
+
+function initAnimaScroll(){
+    const sections = document.querySelectorAll('.section');
+    if(sections.length){
+        const halfSection = window.innerHeight * 0.6;
+    
+        function animaScroll(){
+            sections.forEach((section) => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const isVisible = (sectionTop - halfSection) < 0;
+                
+                if(isVisible)
+                    section.classList.add('ativo');
+                else 
+                    section.classList.remove('ativo');
+            });
+        }
+        
+        animaScroll();
+        
+        window.addEventListener('scroll', animaScroll);
+    }
+}
+
+initAnimaScroll();
