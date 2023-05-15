@@ -64,5 +64,18 @@ const dadoPessoa3 = new DadosPessoa('Bruno', 15);
   // removeClass(classe), remove a classe a todos os elementos
   
 function Dom(select){
-     
+  const elementList = document.querySelectorAll(select);
+  this.elements = elementList;
+
+  this.addClass = function(classe){
+    elementList.forEach((element) => {
+      element.classList.add(classe)
+    });
+  }
+
+  this.removeClass = function(classe){
+    elementList.forEach((element) => {
+      element.classList.remove(classe)
+    });
+  }
 }
