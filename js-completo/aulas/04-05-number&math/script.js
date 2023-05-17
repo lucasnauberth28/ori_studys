@@ -14,3 +14,19 @@ console.log(arrayNumbers);
 // depois retorne a soma total
 const listaPrecos = ['R$ 59,99', ' R$ 100,222',
                      'R$ 230  ', 'r$  200'];
+
+function limpaPrecos(preco) {
+    preco = +preco.toUpperCase().replace('R$', '').trim().replace(',', '.');
+    console.log(preco)
+    preco = +preco.toFixed(2);
+    return preco 
+}
+
+let soma = 0;
+
+listaPrecos.forEach((preco) => {
+    soma += limpaPrecos(preco);
+    console.log(soma);
+});
+
+limpaPrecos(listaPrecos);
